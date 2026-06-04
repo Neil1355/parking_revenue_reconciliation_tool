@@ -169,8 +169,6 @@ Contributions are accepted via pull requests. When preparing changes please:
 3. Run the test suite locally and ensure all tests pass.
 4. Provide a clear description of the change and any operational impact.
 
-If you prefer, I can prepare a pull request template and a standardized contribution document for this repository.
-
 ## Contact and support
 
 For questions or to request additional capabilities, open an issue on the repository or contact me via neilbarot5@gmail.com.
