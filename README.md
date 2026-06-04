@@ -74,12 +74,3 @@ Notes:
 - If you add a new feature, include unit tests under `tests/` and run `pytest` locally.
 - If you modify public function signatures, update docstrings and tests accordingly.
 
-## Next steps / suggestions
-
-- Replace `datetime.utcnow()` with `datetime.now(timezone.utc)` in `audit.py` and `post.py` to produce timezone-aware timestamps and remove deprecation warnings.
-- Add more ingest adapters (JSON, vendor APIs) and a robust schema validation layer.
-- Add CI (GitHub Actions) that runs `pytest` on pushes and PRs.
-
----
-
-If you want I can: open a PR, add a small `README` badge, create CI config, or split the current commit into logical commits for review — tell me which next. 
