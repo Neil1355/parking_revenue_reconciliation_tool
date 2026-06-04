@@ -1,0 +1,51 @@
+# Parking Revenue Reconciliation Tool (PRRT) Configuration
+
+# Input/Output Configuration
+input:
+  source_file: "data/transactions.csv"
+  delimiter: ","
+  encoding: "utf-8"
+
+output:
+  report_file: "reports/reconciliation_report.xlsx"
+  audit_log: "logs/audit.log"
+
+# Column Mapping Configuration
+# Maps source CSV columns to standardized field names
+column_mapping:
+  transaction_date: "Date"
+  transaction_id: "Transaction ID"
+  location_id: "Location"
+  amount: "Amount"
+  payment_method: "Payment Method"
+  transaction_status: "Status"
+
+# Required Fields Validation
+required_fields:
+  - transaction_date
+  - transaction_id
+  - location_id
+  - amount
+  - payment_method
+
+# Grouping Configuration
+grouping:
+  primary_key: "transaction_date"
+  secondary_key: "location_id"
+
+# Report Generation
+report:
+  include_summary: true
+  include_details: true
+  currency_symbol: "$"
+  date_format: "YYYY-MM-DD"
+
+# Processing Options
+processing:
+  skip_failed_records: true
+  tolerance: 0.01  # Tolerance for ledger amount validation (cents)
+  verbose: false
+  charts: 'Charts'
+
+# Audit Log Configuration
+audit_log_file: 'audit_log.csv'
